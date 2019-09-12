@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+            <title>Menu Flexbox</title>
+            <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin:0;
+            }
+            header {
+                padding: 15px;
+                width: 100%;
+                text-align: center;
+                background-color: aqua;
+            }
+            div {
+                display: flex;
+            }
+
+            aside {
+                order:1;
+                width:300px;
+                height: 80vh;
+                background-color: bisque;
+                padding: 20px;
+                text-align: center;
+            }
+            main {
+                order:2;
+                height: 60vh;
+                background-color: brown;
+                flex-grow: 2;
+                padding: 20px;
+                text-align: center;
+            }
+            
+            footer {
+                padding: 15px;
+                width: 100%;
+                background-color: aquamarine;
+                text-align: center;
+                position: absolute;
+                bottom: 0;
+
+            }
+            
+            
+            </style>
+
+    </head>
+    <body>
+        <header>Header #2 exercise </header>
+
+        <div>
+            <aside>Sidebar 300px <br> Column 1
+
+            </aside>
+            <main> Content Remaining Width <br> Column 2
+            <p style="color: blue"> #1 www.flexboxfroggy.com</p>
+            <p> Make the layout above using Flexbox. Use different color backgrounds so you can see the width and height of each column. Content for each column should have varying heights</p>
+            </main>
+
+        </div>
+
+        <footer>Footer</footer>
+      
+    </body>
+</html>
