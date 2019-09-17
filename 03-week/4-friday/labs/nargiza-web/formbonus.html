@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+                <title>Form</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       <style>
+body{
+    margin: auto;
+    padding: 30px;
+    background-color: gainsboro;
+}
+
+
+       </style>
+       
+        </head>
+<body>
+<header>
+    <h1>Do you want to join study group?</h1>
+</header>
+<!-- copied from bootstrap form grid -->
+<form>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Last name">
+          </div>
+          <div class="col">
+                <input type="text" class="form-control" placeholder="git-hub-acct">
+              </div>
+            <div class="col">
+                    <input type="text" class="form-control" placeholder="e-mail">
+            </div>
+        </div>
+ </form>
+
+ <br>
+ <!-- copied from bootstrap for radio -->
+ <h5>Gender</h5>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">Female</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">Male</label>
+      </div>
+      
+      <br>
+      <br>
+
+<h5>Would you like to join a study group? </h5>
+
+<!-- copied from bootstrap for checkbox -->
+<div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">yes</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">no</label>
+      </div>
+      <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">maybe</label>
+          </div>
+
+<br>
+<br>
+<h5>if you answered yes or maybe then answer following questions</h5>
+     <!-- copied from bootstrap for select boxes -->
+     <select class="custom-select">
+         
+            <option selected> which days are best for you</option>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+            <option value="7">Subday</option>
+          </select>      
+
+          <br>
+          <br>
+
+    
+
+          
+
+          <h5>What time is best for you to study?</h5>
+
+          <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">mornings</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">afternoons</label>
+              </div>
+              <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">evenings</label>
+                  </div>
+
+                  <br>
+          <br>
+
+    <!-- copied from bootstrap readonly plain text -->
+
+    <form>
+            
+            
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">anything to add</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword" placeholder="add text">
+              </div>
+            </div>
+          </form>
+
+          <br>
+          <button>Submit</button>
+
+
+</body>
+
+
+
+
+
+
+</html>
