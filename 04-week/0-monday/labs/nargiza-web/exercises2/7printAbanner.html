@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            /*
+            Print a Banner
+
+Write a function printBanner which is given some text and prints a banner with a border surrounding the text. The border has to stretch to the length of the text.
+
+> printBanner('Welcome to DigitalCrafts') 
+**************************** 
+* Welcome to DigitalCrafts * 
+****************************
+*/
+            function printBanner(text){
+                var star="";
+                var len = text.length;
+                while(0<len+4){
+                    star += "*";
+                    len--;
+                }
+                console.log(star);
+                console.log("* " + text+ " *");
+                console.log(star);
+            }
+
+            printBanner("hello");
+            printBanner("Welcome to Digital Crafts");
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function leetspeak(text){
+                var word = []
+                var word = text.split("");
+                for (var i=0;i<word.length; i++){
+                    console.log("Index: " + i)
+                    console.log(word)
+                    console.log(word[i])
+                    switch (word[i]){
+                        case 'A':
+                            var value1 = 4;
+                            word[i] = value1;
+                        case 'E':
+                            var value2 = 3;
+                            word[i] = value2;
+                        case 'G':
+                            var value3 = 6;
+                            word[i] = value3
+                        case 'L':
+                            var value4 = 1; 
+                            word[i] = value4;
+                        case 'O':
+                            var value5 = 0;
+                            word[i] = value5;
+                        case 'S':
+                            var value6= 5;
+                            word[i] = value6;
+                        case 'T':
+                            var value7 = 7;
+                            word[i] = value7;
+                       // default:
+                          //  word[i] = 0;
+                    }
+                    console.log(word)
+                    console.log(word[i])
+                }
+                console.log(word)
+                
+            }
+
+            leetspeak("LEET");
+
+        </script>
+    </body>
+</html>
