@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            /*
+// 1-way;
+  (function (){
+      var x = "Hello!!!";
+      console.log(x);}) ();
+ // 2-way;
+
+ function defaultParam(param1 = "something", param2){
+     console.log(param1)
+ }
+ */
+
+ /*
+ function letTest(){
+     let x = 1;
+     if (x===1){
+         let x = 2; //different variable
+         console.log(x); // output 2 local
+     } 
+     console.log(x); // output 1 global
+ }
+ letTest();
+ */
+
+ /*
+
+ function letTest(){
+     let x = 1;
+     if (x===1){
+         var x = 2; //different variable, Giving syntax error "x has already been defined"
+         console.log(x); 
+     } 
+     console.log(x); 
+ }
+ letTest();
+ */
+/*
+ function letTest(){
+     var x = 1;
+     if (x===1){
+         let x = 2; //different variable, local
+         console.log(x); // output 2
+     } 
+     console.log(x); // output 1, global
+ }
+ letTest();
+ */
+
+ function letTest(){
+     var x = 1;
+     if (x===1){
+         var x = 2; //different variable
+         console.log(x); // output 2
+     } 
+     console.log(x); // output 2, 'modified'
+ }
+ letTest();
+
+</script>
+ </body>
+ </html>

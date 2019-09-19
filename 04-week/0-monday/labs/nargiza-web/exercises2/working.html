@@ -5,38 +5,38 @@
     </head>
     <body>
         <script>
-            function leetspeak(text){
-                var word = text.split(" ");
-                for (var i=0;i<word.length; i++){
-                    console.log("Index: " + i)
-                    console.log(word[i])
-                    switch (word[i]){
-                        case 'A':4;
-                            
-                        case 'E':3;
-                            
-                        case 'G':6;
-                            
-                        case 'L':1;
-                            
-                        case 'O':0;
-                           
-                        case 'S':5;
-                            
-                        case 'T':7;
-                        return word;
-                            
-                       // default:
-                          //  word[i] = 0;
-                    }
-                    
-                    console.log(word)
-                }
-                console.log(word)
-                
-            }
 
-            leetspeak("LEET");
+        //not finished yet
+           function leetspeak(word){
+               var upperLetters = word.toUpperCase();
+               var splitToLetters = word.split("");
+               var convertToNumbers = [];
+
+               function letterReplace(splitToLetters){
+
+                switch(splitToLetters){
+                    case "A": return 4;
+                    case "E": return 3;
+                    case "G": return 6;
+                    case "I": return 1;
+                    case "O": return 0;
+                    case "S": return 5;
+                    case "T": return 7;
+                    default: return splitToLetters;
+                }
+               }
+           
+
+               
+                convertToNumbers.push(letterReplace(splitToLetters));
+                return convertToNumbers.join("");
+             
+
+
+           }
+console.log(leetspeak("Leet"));
+
+
         </script>
     </body>
 </html>

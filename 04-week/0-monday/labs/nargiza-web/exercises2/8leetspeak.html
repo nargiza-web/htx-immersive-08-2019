@@ -5,46 +5,57 @@
     </head>
     <body>
         <script>
+/*Leetspeak
+
+Write a function leetspeak which is given a string, and returns the leetspeak equivalent of the string. To convert text to its leetspeak version, make the following substitutions:
+
+A => 4
+E => 3
+G => 6
+I => 1
+O => 0
+S => 5
+T => 7
+> leetspeak('Leet') 
+l337
+*/
+
             function leetspeak(text){
                 var word = []
                 var word = text.split("");
                 for (var i=0;i<word.length; i++){
-                    console.log("Index: " + i)
-                    console.log(word)
-                    console.log(word[i])
-                    switch (word[i]){
+                    switch (word[i].toUpperCase()){
                         case 'A':
-                            var value1 = 4;
-                            word[i] = value1;
+                            word[i] = 4;
+                            break;   
                         case 'E':
-                            var value2 = 3;
-                            word[i] = value2;
+                            word[i] = 3;
+                            break;
                         case 'G':
-                            var value3 = 6;
-                            word[i] = value3
+                            word[i] = 6;
+                            break;
                         case 'L':
-                            var value4 = 1; 
-                            word[i] = value4;
+                            word[i] = 1;
+                            break;
                         case 'O':
-                            var value5 = 0;
-                            word[i] = value5;
+                            word[i] = 0;
+                            break;
                         case 'S':
-                            var value6= 5;
-                            word[i] = value6;
+                            word[i] = 5;
+                            break;
                         case 'T':
-                            var value7 = 7;
-                            word[i] = value7;
-                       // default:
-                          //  word[i] = 0;
-                    }
-                    console.log(word)
-                    console.log(word[i])
+                            word[i] = 7;
+                            break;
+                        default: 
+                         word[i] = word [i]; 
+                         break;  
+                    }  
                 }
-                console.log(word)
-                
+               let finalWord = word.join("");
+               console.log(finalWord);  
             }
 
-            leetspeak("LEET");
+            leetspeak("ALEeTrjst");
 
         </script>
     </body>

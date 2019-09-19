@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            /* Long-long Vowels
+
+Write a function, which is given a string, return the result of extending any long vowels to the length of 5.
+
+> longLongVowels('Good') 
+'Goooood' 
+> longLongVowels('Cheese') 
+'Cheeeeese' 
+> longLongVowels('Man') 
+'Man'*/
+    function longVowels(text){
+    var word = [];
+     var word = text.split("");
+     for (var i=0; i<word.length;i++){
+         if (word[i] === word[i+1]){
+        switch(word[i]){
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                word[i]= word[i].repeat(4);
+                 break;
+        }
+     }}
+     let finalWord = word.join("");
+     console.log(finalWord);
+     
+ }
+     longVowels("maaneemooru"); 
+ 
+        
+        
+        </script>
+    </body>
+</html>
