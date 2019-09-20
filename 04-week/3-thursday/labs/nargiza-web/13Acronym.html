@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+<script>
+/*
+Implement all of the following problems without using a while or a for loop unless you were explicitly asked to use loops.*/
+/*Acronym
+Write a function acronym that takes an array of words as argument and returns the acronym of the words. Use the reduce method to do this.
+
+> acronym(['very', 'important', 'person'])
+'VIP' > acronym(['national', 'aeronautics', 'space', 'administration']) 'NASA'*/
+
+function acronym(arr){
+    return arr.reduce(((x,y) => x+y.slice(0,1)),"").toUpperCase();
+}
+console.log(acronym(['very', 'important', 'person']));
+acronym(['national', 'aeronautics', 'space', 'administration']);
+
+
+</script>
+</body>
+</html>
