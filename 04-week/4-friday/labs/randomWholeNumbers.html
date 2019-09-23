@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+
+function randomWholeNum() {
+
+  // Only change code below this line.
+
+  return Math.floor(Math.random() * 10);
+}
+
+////////////////////////////////
+// Example
+function ourRandomRange(ourMin, ourMax) {
+
+return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}
+
+ourRandomRange(1, 9);
+
+// Only change code below this line.
+
+function randomRange(myMin, myMax) {
+
+return Math.floor(Math.random()*(max-min+1)) + min; // Change this line
+
+}
+
+// Change these values to test your function
+var myRandom = randomRange(5, 15);
+
+////////////////////////////////////
+function convertToInteger(str) {
+ return parseInt(str); 
+}
+
+convertToInteger("56");
+
+///////////////////////////
+function checkEqual(a, b) {
+  return a==b ? true : false;
+}
+
+checkEqual(1, 2);
+
+///////////////////
+//In the previous challenge, you used a single conditional operator. You can also chain them together to check for multiple conditions.
+
+//The following function uses if, else if, and else statements to check multiple conditions:
+
+function findGreaterOrEqual(a, b) {
+  if(a === b) {
+    return "a and b are equal";
+  }
+  else if(a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater";
+  }
+}
+//The above function can be re-written using multiple conditional operators:
+
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+}
+
+        </script>
+    </body>
