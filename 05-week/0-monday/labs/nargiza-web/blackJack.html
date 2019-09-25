@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+            <title>blackjack game</title>
+        <style>
+        #table {
+            background-color: #34eb40;
+            height : 90vh;
+            border: 5px solid #59351e;
+            border-radius: 3%;
+            padding: 45px;
+            padding-top: 150px;
+            margin: 10px;
+        }
+        .backside {
+            background-color: #aaff00;
+            width :100%;
+            height: 230px;
+            margin-bottom: 17px;
+            
+        }
+        img {
+            width: 150px;
+            height: 200px;
+            margin: 15px;
+        }
+        
+        .buttons{
+            display: flex;
+            justify-content: center;
+            /*width: 25px;
+            height: 15px;*/
+        }
+        button {
+            font-size: 21px;
+            margin: 10px;
+            border-radius: 15%;
+        }
+
+        
+        
+        
+        </style>
+    </head>
+    <body>
+        <div id="table">
+
+            <div id="messages"></div>
+            
+            <label>Dealer: </label>
+            <label id="dealer-points" class="points"></label>
+            <div class="backside">
+
+                
+            
+                <div id="dealer-hand" class="hand"></div>
+            
+            </div>
+            
+            <label>Player: </label>
+            <label id="player-points" class="points"></label>
+
+            <div class ="backside">
+                <div id="player-hand" class="hand"></div>
+            </div>
+            
+            <div class="buttons">
+            
+                <button id="deal-button">Deal</button>
+            
+                <button id="hit-button">Hit</button>
+            
+                <button id="stand-button">Stand</button>
+            
+            </div>
+            
+        </div>
+            
+            
+    </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"
+></script>
+<script src= "blackjack.js" ></script>
+
+<!--
+    ///// CALCULATING POINTS!!!!
+  /*let playerArray = playerHand.map( value => value.number)
+  let numbersOnly = playerArray.map(value => {
+      switch (value){
+          case "jack": case "queen": case "king": return 10;
+          default: return value;
+      }
+  })
+  let sumOfPlayer = numbersOnly.reduce((sumSoFar, nextValue) => {
+      if (typeof nextValue === "number"){
+          return sumSoFar + nextValue;
+      }
+      else if (typeof nextValue === "string" && sumSoFar < 11){
+          return sumSoFar + 11;
+      }
+      else if (typeof nextValue === "string" && sumSoFar >=11){ 
+          return sumSoFar +1;
+      }
+  })
+  
+  console.log(sumOfPlayer);*/
+-->
+</html>

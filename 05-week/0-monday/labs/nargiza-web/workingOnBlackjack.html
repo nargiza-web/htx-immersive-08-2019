@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>
+    <script>
+        
+        var playerHand = [];
+        var card = {
+            suit: suits(),
+            number: deck(),
+            order: Math.floor(Math.random()*52) +1
+        };
+        playerHand.push(card);
+
+        var points = playerHand.map(obj => {
+            let numbersIn = [];
+            if (obj.number == "ace"){
+                numbersIn = 1;
+            }
+            else if (obj.number == "jack"){
+                numbersIn = 11;
+            }
+            else if (obj.number == "queen" ){
+                numbersIn = 12;
+            }
+            else if (obj.number == "king"){
+                numbers = 13;
+            }
+            else{
+            numbersIn = obj.number;}
+            
+            
+            return numbersIn;
+        }).reduce(a, b => a+b);
+
+        
+    </script>
+</body>
+</html>

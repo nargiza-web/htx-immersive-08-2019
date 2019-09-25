@@ -1,0 +1,209 @@
+var dealerHand = [];
+var playerHand = [];
+
+var mySuits = () => {
+    let suits = ["hearts", "spades", "clubs", "diamonds"];
+    let i = Math.floor(Math.random()* 4) ;
+    return suits[i];}
+
+     //maximum and minimum from formula Math.floor(Math.random() * (max-min + 1)) + min
+var display = () =>{
+        let random = Math.floor(Math.random()* 13)+1;
+        "use strict";
+       if ( random === 1){
+           return "ace";
+       }
+       else if (random === 11){
+           return "jack";
+       }
+       else if (random === 12){
+           return "queen";
+       }
+       else if (random === 13){
+           return "king";}
+    
+       return random ;
+    } 
+
+    /////////////// generates card
+function GenerateCard(){
+    let card ={
+        suit: mySuits(),
+        number: display(),      
+    }
+    return card;
+}
+
+    /////////// checks duplicates
+ function checkDuplicates(card, player){
+     console.log(card)
+    if (player.some(element => element.suit == card.suit && element.number == card.number)) {
+        GenerateCard()
+    } else {
+    
+    let img = document.createElement("img");
+             img.src = "./images/" + card.number + "_of_" + card.suit + ".png";
+             document.getElementById("player-hand").appendChild(img);
+             console.log(mySum(playerHand));
+             console.log(displayTotal(playerHand));
+            document.getElementById("player-points").innerHTML = displayTotal(playerHand);
+            return player.push(card)
+        }
+    }
+    //  player.forEach(function(element){
+    //     if ( element == card){
+    //         console.log("OH NO A DUPLICATE")
+    //         GenerateCard();
+    //     }
+    //     else {
+    //         console.log("GOOD")
+    //         player.push(card);
+    //         let img = document.createElement("img");
+    //         img.src = "./images/" + card.number + "_of_" + card.suit + ".png";
+    //         document.getElementById("player-hand").appendChild(img);
+    //         console.log(mySum(playerHand));
+    //         console.log(displayTotal(playerHand));
+    //         document.getElementById("player-points").innerHTML = displayTotal(playerHand);
+    //     }
+    //  })
+    //  let card = GenerateCard();
+     //let condition = playerHand.includes(card) && dealerHand.includes(card)
+     //let condition2 = dealerHand.includes(card)
+        //console.log(condition)
+    //     for (let i=0; i< player.length+1; i++){
+    //         if ( player[i] == card){
+    //             console.log("OH NO A DUPLICATE")
+    //             GenerateCard();
+    //         }
+    //         else {
+    //             player.push(card);
+    //             let img = document.createElement("img");
+    //             img.src = "./images/" + card.number + "_of_" + card.suit + ".png";
+    //             document.getElementById("player-hand").appendChild(img);
+    //             console.log(mySum(playerHand));
+    //             console.log(displayTotal(playerHand));
+    //             document.getElementById("player-points").innerHTML = displayTotal(playerHand);
+    //                 }
+    //     }
+    // }
+//      if (condition == true) //&& condition2 == true) 
+//  {
+//         GenerateCard();
+//      } else {
+//         player.push(card)
+        
+//      }
+     
+//  }
+
+
+
+    ///////////
+
+///calculating points in general
+function mySum(someHand){
+    let array = someHand.map( value => value.number)
+      let numbersOnly = array.map(value => {
+          switch (value){
+              case "jack": case "queen": case "king": return 10;
+              default: return value;
+          }
+      })
+      let sumOfArray = numbersOnly.reduce((sumSoFar, nextValue) => {
+          if (typeof nextValue === "number"){
+              return sumSoFar + nextValue;
+          }
+          else if (typeof nextValue === "string" && sumSoFar < 11){
+              return sumSoFar + 11;
+          }
+          else if (typeof nextValue === "string" && sumSoFar >=11){ 
+              return sumSoFar +1;
+          }
+      })
+      return sumOfArray;
+    }
+
+// BUSTS OR WINS!
+function displayTotal(someHand){
+    let total = mySum(someHand);
+    if (total > 21){
+        return total + " YOU BUSTED!";
+    }
+    else if (total < 21){
+        return total;}
+    
+    else if (total = 21){
+        return total + " YOU WIN!";
+    }
+    }
+
+var deal = () => {            
+//<div id="dealer-hand" class="hand"><img src="images/...png"/><img src="images/...png"/></div>
+    // let card1 ={
+    //     suit:mySuits(),
+    //     number: display(),
+    //     order: Math.floor(Math.random()*52 + 1)
+    // }
+    // let card2 = {
+    //     suit: mySuits(),
+    //     number: display(),
+    //     order: Math.floor(Math.random()* 52 +1) 
+    // }
+    // dealerHand.push(card1);
+    // dealerHand.push(card2);
+
+    let card = GenerateCard();
+    checkDuplicates(card,dealerHand);
+
+    let card1=GenerateCard();
+    checkDuplicates(card1, dealerHand);
+
+    let card2 = GenerateCard();
+    checkDuplicates(card2, playerHand);
+
+    let card3 = GenerateCard();
+    checkDuplicates(card3, playerHand);
+
+    let img = document.createElement("img");
+    let img1 = document.createElement("img");
+    img.src= "./images/" + card.number + "_of_" + card.suit + ".png";
+    img1.src="./images/" + card1.number + "_of_" + card1.suit + ".png";
+    document.getElementById("dealer-hand").appendChild(img);
+    document.getElementById("dealer-hand").appendChild(img1);
+
+    //for player 
+    // let card= {
+    //     suit: mySuits(),
+    //     number: display(),
+    //     order: Math.floor(Math.random() * 52 + 1)
+    // }
+    // let card0= {
+    //     suit: mySuits(),
+    //     number: display(),
+    //     order: Math.floor(Math.random() * 52 + 1)
+    // }
+    // playerHand.push(card);
+    // playerHand.push(card0);
+    let imgPlayer = document.createElement("img");
+    let imgPlayer1 = document.createElement("img");
+    imgPlayer.src = "./images/" + card2.number + "_of_" + card2.suit + ".png";
+    imgPlayer1.src="./images/" + card3.number + "_of_" + card3.suit + ".png";
+    document.getElementById("player-hand").appendChild(imgPlayer);
+    document.getElementById("player-hand").appendChild(imgPlayer1);
+    console.log(mySum(dealerHand));
+    document.getElementById("dealer-points").innerHTML = displayTotal(dealerHand);
+    document.getElementById("player-points").innerHTML = displayTotal(playerHand);
+}
+document.getElementById("deal-button").addEventListener("click", deal);
+
+var hit = () => {
+    let card = GenerateCard();
+    checkDuplicates(card,playerHand);
+    
+    
+}
+document.getElementById("hit-button").addEventListener("click", hit);
+  
+
+
+ 
