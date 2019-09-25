@@ -39,6 +39,11 @@
             margin: 10px;
             border-radius: 15%;
         }
+        #messages {
+            justify-content: center;
+            color:blueviolet;
+            font-size: 29px;
+        }
 
         
         
@@ -53,9 +58,6 @@
             <label>Dealer: </label>
             <label id="dealer-points" class="points"></label>
             <div class="backside">
-
-                
-            
                 <div id="dealer-hand" class="hand"></div>
             
             </div>
@@ -87,27 +89,4 @@
 ></script>
 <script src= "blackjack.js" ></script>
 
-<!--
-    ///// CALCULATING POINTS!!!!
-  /*let playerArray = playerHand.map( value => value.number)
-  let numbersOnly = playerArray.map(value => {
-      switch (value){
-          case "jack": case "queen": case "king": return 10;
-          default: return value;
-      }
-  })
-  let sumOfPlayer = numbersOnly.reduce((sumSoFar, nextValue) => {
-      if (typeof nextValue === "number"){
-          return sumSoFar + nextValue;
-      }
-      else if (typeof nextValue === "string" && sumSoFar < 11){
-          return sumSoFar + 11;
-      }
-      else if (typeof nextValue === "string" && sumSoFar >=11){ 
-          return sumSoFar +1;
-      }
-  })
-  
-  console.log(sumOfPlayer);*/
--->
 </html>

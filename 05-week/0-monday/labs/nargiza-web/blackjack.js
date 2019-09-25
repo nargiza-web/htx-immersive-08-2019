@@ -33,8 +33,9 @@ function GenerateCard(){
     }
     return card;
 }
-function checkDuplicates(card, player){
 
+// checking duplicates
+function checkDuplicates(card, player){
     while(playerHand.includes(card) || dealerHand.includes(card)){
         card = GenerateCard(); 
         }
@@ -43,6 +44,7 @@ function checkDuplicates(card, player){
     
 ///calculating points in general
 function mySum(someHand){
+    "use strict";
     let array = someHand.map( value => value.number)
       let numbersOnly = array.map(value => {
           switch (value){
@@ -121,3 +123,33 @@ var hit = () => {
     document.getElementById("player-points").innerHTML = displayTotal(playerHand);  
 }
 document.getElementById("hit-button").addEventListener("click", hit);
+
+//player pushes stand button;
+
+var stand = () => {
+    //deal generate cards to dealer and place their image also
+    while (mySum(dealerHand) < 17){
+    let card = GenerateCard();
+    checkDuplicates(card, dealerHand);
+    let img = document.createElement("img");
+    img.src = "./images/" + card.number + "_of_" + card.suit + ".png";
+    document.getElementById("dealer-hand").appendChild(img);
+    document.getElementById("dealer-points").innerHTML = displayTotal(dealerHand);}
+    
+    if (mySum(dealerHand) == 21){
+    document.getElementById("messages").innerHTMl = "Dealer Wins!!!!"
+    }
+    else if (mySum(dealerHand) > 21){
+    document.getElementById("messages").innerHTML = "Dealer Busted!!!!"
+    }
+    else if(mySum(dealerHand) < 21 && mySum(playerHand) < mySum(dealerHand)){
+    document.getElementById("messages").innerHTML = "Dealer Wins!!!!"
+    }
+    else if(mySum(dealerHand) < 21 && mySum(playerHand) > mySum(dealerHand)){
+    document.getElementById("messages").innerHTML = "Player Wins!!!!"
+    }
+    else {
+    document.getElementById("messages").innerHTML = "Dealer Wins!!!"
+    }
+}
+document.getElementById("stand-button").addEventListener("click", stand);
