@@ -141,7 +141,7 @@ var replace = () => {
 var stand = () => {
     //deal generate cards to dealer and place their image also
     replace();
-    while (mySum(dealerHand) <= 17){
+    while (mySum(dealerHand) <17){
     let card = GenerateCard();
     checkDuplicates(card, dealerHand);
     let img = document.createElement("img");
@@ -167,14 +167,3 @@ var stand = () => {
 }
 document.getElementById("stand-button").addEventListener("click", stand);
 
-var restart = () => {
-document.getElementById("messages").reset();
-document.getElementById("dealer-points").reset();
-document.getElementById("hit-button").reset();
-document.getElementById("player-points").reset();
-document.getElementById("dealer-hand").reset();
-document.getElementById("player-hand").reset();
-document.getElementById("deal-button").reset();
-document.getElementById("stand-button").reset();
-}
-document.getElementById("restart-button").addEventListener("click", restart);
