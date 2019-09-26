@@ -84,8 +84,8 @@ var deal = () => {
     let card = GenerateCard();
     checkDuplicates(card,dealerHand);
 
-    let card1=GenerateCard();
-    checkDuplicates(card1, dealerHand);
+    //let card1=GenerateCard();
+    //checkDuplicates(card1, dealerHand);
 
     let card2 = GenerateCard();
     checkDuplicates(card2, playerHand);
@@ -95,11 +95,13 @@ var deal = () => {
 
     let img = document.createElement("img");
     let img1 = document.createElement("img");
+    img1.setAttribute("id", "replace");
     img.src= "./images/" + card.number + "_of_" + card.suit + ".png";
-    img1.src="./images/" + card1.number + "_of_" + card1.suit + ".png";
-    document.getElementById("dealer-hand").appendChild(img);
+    //img1.src="./images/" + card1.number + "_of_" + card1.suit + ".png";
+    img1.src = "https://i.pinimg.com/originals/79/21/66/792166a01d9f4024b4eb51ae51b0b185.jpg";
     document.getElementById("dealer-hand").appendChild(img1);
-
+    document.getElementById("dealer-hand").appendChild(img);
+    
     let imgPlayer = document.createElement("img");
     let imgPlayer1 = document.createElement("img");
     imgPlayer.src = "./images/" + card2.number + "_of_" + card2.suit + ".png";
@@ -124,11 +126,22 @@ var hit = () => {
 }
 document.getElementById("hit-button").addEventListener("click", hit);
 
-//player pushes stand button;
+//player pushes stand button; //first replace the image
+var replace = () => {
+   let card = GenerateCard();
+   checkDuplicates(card, dealerHand);
+   //I have created and id on my image1 for flip, now using it
+   let img1 = document.querySelector("#replace");
+   var newImg1 = document.createElement('img');
+   newImg1.src = "./images/" + card.number + "_of_" + card.suit + ".png";
+   img1.parentNode.replaceChild(newImg1, img1);
+   document.getElementById("dealer-points").innerHTML = displayTotal(dealerHand);
+}
 
 var stand = () => {
     //deal generate cards to dealer and place their image also
-    while (mySum(dealerHand) < 17){
+    replace();
+    while (mySum(dealerHand) <= 17){
     let card = GenerateCard();
     checkDuplicates(card, dealerHand);
     let img = document.createElement("img");
@@ -137,19 +150,31 @@ var stand = () => {
     document.getElementById("dealer-points").innerHTML = displayTotal(dealerHand);}
     
     if (mySum(dealerHand) == 21){
-    document.getElementById("messages").innerHTMl = "Dealer Wins!!!!"
+    document.getElementById("messages").innerHTMl = mySum(dealerHand) + " Dealer Wins!!!!"
     }
     else if (mySum(dealerHand) > 21){
-    document.getElementById("messages").innerHTML = "Dealer Busted!!!!"
+    document.getElementById("messages").innerHTML = mySum(playerHand) + " Player Wins!!!!"
     }
     else if(mySum(dealerHand) < 21 && mySum(playerHand) < mySum(dealerHand)){
-    document.getElementById("messages").innerHTML = "Dealer Wins!!!!"
+    document.getElementById("messages").innerHTML = mySum(dealerHand) + " Dealer Wins!!!!"
     }
     else if(mySum(dealerHand) < 21 && mySum(playerHand) > mySum(dealerHand)){
-    document.getElementById("messages").innerHTML = "Player Wins!!!!"
+    document.getElementById("messages").innerHTML = mySum(playerHand) + " Player Wins!!!!"
     }
     else {
-    document.getElementById("messages").innerHTML = "Dealer Wins!!!"
+    document.getElementById("messages").innerHTML = mySum(dealerHand) + " Dealer Wins!!!"
     }
 }
 document.getElementById("stand-button").addEventListener("click", stand);
+
+var restart = () => {
+document.getElementById("messages").reset();
+document.getElementById("dealer-points").reset();
+document.getElementById("hit-button").reset();
+document.getElementById("player-points").reset();
+document.getElementById("dealer-hand").reset();
+document.getElementById("player-hand").reset();
+document.getElementById("deal-button").reset();
+document.getElementById("stand-button").reset();
+}
+document.getElementById("restart-button").addEventListener("click", restart);
