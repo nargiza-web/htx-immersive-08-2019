@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 900;
+  margin: 0;
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: tan;
+  text-align: center;
+}
+
+.button {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 20px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.end.button {
+  color: black;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+}
+
+.table {
+  background-image: url(bg-table.jpg);
+  color: white;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 20px;
+  border: 3px solid tan;
+  max-width: 700px;
+}
+
+.table-layout {
+  display: flex;
+  align-content: center;
+}
+
+.hands-container {
+  flex-grow: 1;
+}
+
+.deck {
+  margin: 50px;
+}
+
+.message {
+  margin-bottom: 20px;
+}
+
+.hand {
+  display: flex;
+  align-items: center;
+  min-height: 130px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 30px;
+  border-radius: 3px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dealer-container {
+  display: flex;
+}
+
+.dealer.hand-container {
+  margin-left: 20px;
+  flex-grow: 1;
+}
+
+.card:last-child {
+  margin: 0;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.card {
+  max-height: 100px;
+  width: auto;
+  margin: 0;
+  margin-right: 15px;
+}
+
+.popup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.popup {
+  background-color: #fff;
+  text-align: center;
+  color: black;
+  padding: 20px;
+}

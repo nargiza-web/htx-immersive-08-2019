@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Blackjack</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="popup-container" style="display: none;">
+      <div class="popup">
+        <h2>Game Over</h2>
+        <p id="message" class="message"></p>
+        <a href="index.html" class="end button">
+          Start Over
+        </a>
+      </div>
+    </div>
+
+    <div class="table">
+      <h1>Blackjack</h1>
+
+      <div></div>
+
+      <div class="table-layout">
+        <div class="hands-container">
+          <div class="dealer-container">
+            <div class="hand-container">
+              <h3>Deck</h3>
+              <div class="hand">
+                <img
+                  src="./card-back.png"
+                  alt="Back of playing card"
+                  class="card"
+                />
+              </div>
+            </div>
+
+            <div class="dealer hand-container">
+              <h3>Dealer: <span id="dealer-points"></span></h3>
+              <div id="dealer-hand" class="hand"></div>
+            </div>
+          </div>
+
+          <div class="hand-container">
+            <h3>Player: <span id="player-points"></span></h3>
+            <div id="player-hand" class="hand"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button onclick="deal()" class="start button">Deal</button>
+        <button
+          onclick="draw(player)"
+          class="play button"
+          style="display: none;"
+        >
+          Hit
+        </button>
+        <button onclick="stand()" class="play button" style="display: none;">
+          Stand
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="blackjack.js"></script>
+  </body>
+</html>
